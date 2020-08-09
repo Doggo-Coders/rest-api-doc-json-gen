@@ -1,5 +1,5 @@
 # REST API Generator
-The file (gen.js)[/gen.js], when run with node, reads a JSON file with documentation and generates Markdown and HTML from it.
+The file [gen.js](/gen.js), when run with node, reads a JSON file with documentation and generates Markdown and HTML from it.
 
 ### Usage
 `$ node gen.js <json-file-basename>`
