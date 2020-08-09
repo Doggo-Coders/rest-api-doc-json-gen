@@ -1,9 +1,11 @@
 # REST API Generator
 The file [gen.js](/gen.js), when run with node, reads a JSON file with documentation and generates Markdown and HTML from it.
 
+The file [deno_gen.js](/deno_gen.js) does the same thing using the deno runtime, if that's what you prefer.
 ### Usage
 `$ node gen.js <json-file-basename>`
-
+or
+`$ deno run deno_gen.js [<json-file-base>|<json-file>]`
 An example JSON documentation:
 ```json
 {
