@@ -144,7 +144,7 @@ const toHTML = (docObj) => {
 		out += `<div id="${proc(endpoint.path, macros)}">`
 		out += `<h3><code>${proc(endpoint.method, macros)}</code><code>${proc(endpoint.path, macros)}</code></h3>`
 		
-		out += `<p>${proc(endpoint.desc)}</p>`
+		out += `<p>${proc(endpoint.desc, macros)}</p>`
 		
 		const params = Object.entries(endpoint['req-params'])
 		if(params.length > 0) {
