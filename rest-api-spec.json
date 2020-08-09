@@ -1,0 +1,88 @@
+{
+	"types": {
+		"timestamp": "ISO-8601 timestamp",
+		"string": "Unicode (UTF-8) character string",
+		"Contest": "{'id': u32, 'name': string, 'desc': string} where 'desc' is the contest's description"
+	},
+	"macros": {
+		"pagesize": "Size of one page",
+		"pagenum": "Page number"
+	},
+	"endpoints": [
+		{
+			"method": "GET",
+			"path": "/contests/public",
+			"desc": "Retrieve paginated public contests.",
+			"req-params": {
+				"pagesize": {
+					"type": "u32",
+					"desc": "${pagesize}",
+					"default": "10"
+				},
+				"pagenum": {
+					"type": "u32",
+					"desc": "${pagenum}",
+					"default": "0"
+				}
+			},
+			"req-body": null,
+			"resp-body": {
+				"type": "[Contest]",
+				"desc": ""
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/contests",
+			"desc": "Retrieve (paginated) contests visible to the logged-in user.",
+			"req-params": {
+				"pagesize": {
+					"type": "u32",
+					"desc": "${pagesize}",
+					"default": "10"
+				},
+				"pagenum": {
+					"type": "u32",
+					"desc": "${pagenum}",
+					"default": "0"
+				}
+			},
+			"req-body": null,
+			"resp-body": {
+				"type": "[Contest]",
+				"desc": ""
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/contests/<id>",
+			"desc": "Retrieve contest by ID.",
+			"req-params": {},
+			"req-body": null,
+			"resp-body": {
+				"type": "Contest",
+				"desc": ""
+			}
+		},
+		{
+			"method": "POST",
+			"path": "/contests",
+			"desc": "Create a new contest.",
+			"req-params": {
+				"name": {
+					"type": "u32",
+					"desc": "Contest name",
+					"default": null
+				}
+			},
+			"req-body": {
+				"type": "string",
+				"desc": "Contest description"
+			},
+			"resp-body": {
+				"type": "u32",
+				"desc": "Contest ID"
+			}
+		}
+	]
+}
