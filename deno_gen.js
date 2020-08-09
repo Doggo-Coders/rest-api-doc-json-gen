@@ -1,6 +1,7 @@
 import { assert, assertNotEquals } from "https://deno.land/std/testing/asserts.ts";
 import { readJsonSync } from "https://deno.land/std/fs/read_json.ts"
 import { existsSync   } from "https://deno.land/std/fs/exists.ts"
+
 const proc = (str, macros) => {
 	if(str.indexOf('$') == -1) {
 		return str
@@ -144,7 +145,7 @@ const toHTML = (docObj) => {
 	for(const endpoint of endpoints) {
 		out += `<div id="${proc(endpoint.path, macros)}">`
 		out += `<h3><code>${proc(endpoint.method, macros)}</code><code>${proc(endpoint.path, macros)}</code></h3>`
-		out += `<p>${proc(endpoint.desc)}</p>`
+		out += `<p>${proc(endpoint.desc, macros)}</p>`
 		
 		const params = Object.entries(endpoint['req-params'])
 		if(params.length > 0) {
