@@ -1,7 +1,8 @@
-import { assert, assertNotEquals } from "https://deno.land/std/testing/asserts.ts";
-import { readJsonSync } from "https://deno.land/std/fs/read_json.ts"
-import { existsSync   } from "https://deno.land/std/fs/exists.ts"
-
+// Generator port in TypeScript and Deno, maintained by TFKls.
+// Mainly porting gen.js features and adding explicit type signatures
+import { assert, assertNotEquals } from "https://deno.land/std/testing/asserts.ts"
+import { readJsonSync            } from "https://deno.land/std/fs/read_json.ts"
+import { existsSync              } from "https://deno.land/std/fs/exists.ts"
 const proc = (str, macros) => {
 	if(str.indexOf('$') == -1) {
 		return str
