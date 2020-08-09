@@ -19,7 +19,7 @@ An example JSON documentation:
     {
       "method": "GET",
       "path": "/path/to/endpoint",
-      "desc": "Description! You can use macros you ${abc}ined, just like that!",
+      "desc": "Description! You can use macros you ${abc}ined, just like that! And you can escape the \\${macro references}, this way: \\\\\\\\${...}",
       "req-params": {
         "param1": {
           "type": "i32",
@@ -30,7 +30,7 @@ An example JSON documentation:
           "type": "u32",
           "desc": "Param two. Oh, and by the way, you can use macros pretty much wherever you want."
         },
-          "even-here-${ghi}": {
+        "even-here-${ghi}": {
           "type": "i32",
           "desc": "You can either omit default or make it 'null'"
         }
@@ -58,7 +58,7 @@ Will convert to the following: (Markdown)
 ## API endpoints
 
 ### `GET` `/path/to/endpoint`
-Description! You can use macros you defined, just like that!
+Description! You can use macros you defined, just like that! And you can escape the ${macro references}, this way: \\${...}
 
 | Param name | Param type | Default value | Description |
 | ---------- | ---------- | ------------- | ----------- |
