@@ -1,6 +1,9 @@
+/
 /**/*
 !/README.md
 !/LICENSE
 !/gen.js
 !/deno_gen.js
 !/docs
+!/html-styling.css
+!/example.json

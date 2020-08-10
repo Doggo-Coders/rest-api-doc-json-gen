@@ -1,0 +1,58 @@
+#docs {
+  font-family: Arial;
+  font-size: 12pt;
+}
+
+#docs code {
+  font-family: 'Fira Code', monospace;
+  font-size: 11pt;
+}
+
+#docs table {
+  border-spacing: 0;
+}
+
+#docs h3 code {
+  font-size: unset;
+}
+
+#docs td {
+  padding-left: 7px;
+  padding-right: 7px;
+  border: 1px solid #bababa;
+}
+
+#docs thead td {
+  text-align: center;
+  font-weight: bold;
+  background: #ccc;
+}
+
+#docs tbody td {
+  text-align: center;
+}
+
+#docs tbody td:last-child, #docs tbody td:first-child {
+  text-align: initial;
+}
+
+#docs tbody tr:nth-child(even) {
+  background: #eee;
+}
+
+#docs tbody tr:nth-child(odd) {
+  background: #f8f8f8;
+}
+
+#docs #endpoints > div {
+  background: #fafafa;
+  padding: 5px 15px;
+  margin: 15px 5px;
+  border: 1px solid #e8e8e8;
+  border-radius: 7px;
+}
+
+#docs #endpoints > div h3 {
+  margin: 0;
+  margin-top: 5px;
+}

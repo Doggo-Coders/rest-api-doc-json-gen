@@ -5,6 +5,7 @@ import {
 	assertNotEquals,
 } from "https://deno.land/std/testing/asserts.ts"
 import { existsSync } from "https://deno.land/std/fs/exists.ts"
+
 interface ApiEndpointObject {
 	method: string
 	path: string
@@ -23,6 +24,7 @@ interface ApiEndpointObject {
 		"desc": string
 	}
 }
+
 interface ApiSpecObject {
 	macros: Map<string, string>
 	types: Map<string, string>
@@ -148,7 +150,7 @@ const toMarkdown = (docObj: ApiSpecObject) => {
 }
 
 const toHTML = (docObj: ApiSpecObject) => {
-	let out = ""
+	let out = '<div id="docs">'
 
 	const macros = docObj.macros
 
@@ -215,7 +217,7 @@ const toHTML = (docObj: ApiSpecObject) => {
 				`<p>${resp_body.desc}</p>`
 		}
 
-		out += "</div>"
+		out += "</div></div>"
 	}
 
 	out += "</div>"
@@ -249,10 +251,12 @@ let map1 = new Map<string, string>()
 for (var value in jsonRaw.macros) {
 	map1.set(value, jsonRaw.macros[value])
 }
+
 let map2 = new Map<string, string>()
 for (var value in jsonRaw.types) {
 	map2.set(value, jsonRaw.types[value])
 }
+
 const json: ApiSpecObject = {
 	macros: map1,
 	types: map2,

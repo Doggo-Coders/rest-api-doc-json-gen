@@ -1,0 +1,40 @@
+{
+  "macros": {
+    "abc": "def",
+    "ghi": "jkl"
+  },
+  "types": {
+    "i32": "Signed 32-bit integer",
+    "u32": "Unsigned 32-bit integer"
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/path/to/endpoint",
+      "desc": "Description! You can use macros you ${abc}ined, just like that! And you can escape the \\${macro references}, this way: \\\\\\\\${...}",
+      "req-params": {
+        "param1": {
+          "type": "i32",
+          "desc": "One param",
+          "default": "10"
+        },
+        "param2": {
+          "type": "u32",
+          "desc": "Param two. Oh, and by the way, you can use macros pretty much wherever you want."
+        },
+        "even-here-${ghi}": {
+          "type": "i32",
+          "desc": "You can either omit default or make it 'null'"
+        }
+      },
+      "req-body": {
+        "type": "[u32]",
+        "desc": "^ number list. Also, 'req-body' and 'resp-body' can be null or omitted"
+      },
+      "resp-body": {
+        "type": "str",
+        "desc": "no types are actually validated (at least for now)"
+      }
+    }
+  ]
+}
