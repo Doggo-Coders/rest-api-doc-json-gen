@@ -1,4 +1,5 @@
-// deno-fmt-ignore-file
+// USE `gen.ts` instead!
+// This is not longer maintained and worked on
 var fs = require('fs')
 
 const proc = (str, macros) => {

@@ -1,10 +1,9 @@
-/
-/**/*
+/*
 !/README.md
 !/LICENSE
-!/gen.js
-!/deno_gen.js
+!/old_gen.js
+!/gen.ts
 !/docs
+!/examples
 !/html-styling.css
-!/example.json
 !/run.*
