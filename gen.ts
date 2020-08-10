@@ -1,7 +1,7 @@
 // REMINDER: USE DENO
 // Rest API Specification JSON Generator in TypeScript and the Deno runtime
 // Maintained by TFKls and MasFlam
-// Licensed under MIT\s
+// Licensed under MIT
 import {
 	assert,
 	assertNotEquals
