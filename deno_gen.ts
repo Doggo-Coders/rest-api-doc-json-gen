@@ -180,9 +180,9 @@ const toHTML = (docObj: ApiSpecObject) => {
 
 	for (const endpoint of endpoints) {
 		out += `<div id="${proc(endpoint.path, macros)}">`
-		out += `<h3><code>${proc(endpoint.method, macros)}</code><code>${
+		out += `<h3><code>${proc(endpoint.method, macros)}</code> <code>${
 			proc(endpoint.path, macros)
-		}</code></h3>`
+		}</code> <a href="#${proc(endpoint.path, macros)}">#</a></h3>`
 		out += `<p>${proc(endpoint.desc, macros)}</p>`
 
 		const params = endpoint["req-params"]
@@ -217,10 +217,10 @@ const toHTML = (docObj: ApiSpecObject) => {
 				`<p>${resp_body.desc}</p>`
 		}
 
-		out += "</div></div>"
+		out += "</div>"
 	}
 
-	out += "</div>"
+	out += "</div></div>"
 
 	return out
 }

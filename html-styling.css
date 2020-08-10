@@ -1,58 +1,93 @@
-#docs {
+body {
   font-family: Arial;
   font-size: 12pt;
 }
 
-#docs code {
-  font-family: 'Fira Code', monospace;
-  font-size: 11pt;
-}
-
-#docs table {
+table {
   border-spacing: 0;
 }
 
-#docs h3 code {
-  font-size: unset;
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 11pt;
+  background: #d0d0d0;
+  padding: 4px 4px 3px 4px;
+  border-radius: 3px;
 }
 
-#docs td {
+td code {
+  padding: 0px 3px 0px 3px;
+}
+
+h3 code {
+  font-size: unset;
+  padding: 3px 7px;
+}
+
+td {
   padding-left: 7px;
   padding-right: 7px;
   border: 1px solid #bababa;
 }
 
-#docs thead td {
+thead td {
   text-align: center;
   font-weight: bold;
   background: #ccc;
 }
 
-#docs tbody td {
+tbody td {
   text-align: center;
+  padding-top: 2px;
+  padding-bottom: 3px;
 }
 
-#docs tbody td:last-child, #docs tbody td:first-child {
+tbody td:last-child, tbody td:first-child {
   text-align: initial;
 }
 
-#docs tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background: #eee;
 }
 
-#docs tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
   background: #f8f8f8;
 }
 
-#docs #endpoints > div {
+#endpoints > div {
   background: #fafafa;
   padding: 5px 15px;
   margin: 15px 5px;
   border: 1px solid #e8e8e8;
   border-radius: 7px;
+  transition: background 0.2s;
 }
 
-#docs #endpoints > div h3 {
+#endpoints > div:hover {
+  background: #f0f0f0;
+}
+
+#endpoints > div h3 {
   margin: 0;
-  margin-top: 5px;
+  margin-top: 10px;
+}
+
+#endpoints > div h3 a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: blue;
+  transition: color 0.2s;
+}
+
+#endpoints > div h3 a:visited {
+  color: blue;
+}
+
+#endpoints > div h3 a:hover {
+  color: cyan;
+}
+
+#endpoints > div p {
+  margin-top: 10px;
+  font-size: 11pt;
 }
