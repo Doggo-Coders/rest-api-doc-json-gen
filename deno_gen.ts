@@ -1,8 +1,9 @@
-// Generator port in TypeScript and Deno, maintained by TFKls.
-// Mainly porting gen.js features and adding explicit type signatures
+// Rest API Specification JSON Generator in TypeScript and the Deno runtime
+// Maintained by TFKls and MasFlam
+// Licensed under MIT\s
 import {
 	assert,
-	assertNotEquals,
+	assertNotEquals
 } from "https://deno.land/std/testing/asserts.ts"
 import { existsSync } from "https://deno.land/std/fs/exists.ts"
 
@@ -10,11 +11,7 @@ interface ApiEndpointObject {
 	method: string
 	path: string
 	desc: string
-	"req-params": Map<string, {
-		"type": string
-		"desc": string
-		"default": string
-	}>
+	"req-params": any
 	"req-body": {
 		"type": string
 		"desc": string
@@ -116,8 +113,12 @@ const toMarkdown = (docObj: ApiSpecObject) => {
 			}\`\n` +
 			proc(endpoint.desc, macros) + "\n\n"
 
-		const params = endpoint["req-params"]
-		if (params.size > 0) {
+		const params: [string, {
+			"type": string
+			"desc": string
+			"default": string
+		}][] = Object.entries(endpoint["req-params"])
+		if (params.length > 0) {
 			doc += "| Param name | Param type | Default value | Description |\n" +
 				"| ---------- | ---------- | ------------- | ----------- |\n"
 
@@ -186,8 +187,12 @@ const toHTML = (docObj: ApiSpecObject) => {
 		out += `<h3><code>${method}</code> <code>${path}</code> <a href="#${method}:${path}">#</a></h3>`
 		out += `<p>${proc(endpoint.desc, macros)}</p>`
 
-		const params = endpoint["req-params"]
-		if (params.size > 0) {
+		const params: [string, {
+			"type": string
+			"desc": string
+			"default": string
+		}][] = Object.entries(endpoint["req-params"])
+		if (params.length > 0) {
 			out += "<table><thead><tr>" +
 				"<td>Param name</td><td>Param type</td><td>Default value</td><td>Description</td>" +
 				"</tr></thead><tbody>"
