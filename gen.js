@@ -1,3 +1,4 @@
+// deno-fmt-ignore-file
 var fs = require('fs')
 
 const proc = (str, macros) => {
@@ -142,7 +143,7 @@ const toHTML = (docObj) => {
 	
 	for(const endpoint of endpoints) {
 		out += `<div id="${proc(endpoint.path, macros)}">`
-		out += `<h3><code>${proc(endpoint.method, macros)}</code><code>${proc(endpoint.path, macros)}</code></h3>`
+		out += `<h3><code>${proc(endpoint.method, macros)}</code> <code>${proc(endpoint.path, macros)}</code></h3>`
 		
 		out += `<p>${proc(endpoint.desc, macros)}</p>`
 		
